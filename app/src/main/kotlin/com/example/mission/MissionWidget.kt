@@ -11,8 +11,8 @@ import android.widget.RemoteViews
 class MissionWidget : AppWidgetProvider() {
 
     private val PREFS_NAME = "MissionPrefs"
-    private val KEY_MISSION = "mission_text"
-    private val KEY_POINTS = "mission_points"
+    //private val KEY_MISSION = "mission_text"
+    //private val KEY_POINTS = "mission_points"
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         super.onUpdate(context, appWidgetManager, appWidgetIds)
@@ -30,8 +30,21 @@ class MissionWidget : AppWidgetProvider() {
 
     private fun updateAllWidgets(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        val mission = prefs.getString(KEY_MISSION, "Sem missão") ?: "Sem missão"
-        val points = prefs.getString(KEY_POINTS, "0") ?: "0"
+
+        // Use the same key as MainActivity
+        val textoSalvo = prefs.getString("LISTA_COMPLETA", "") ?: ""
+
+        var mission = "Sem missão"
+        var points = ""
+
+        if (textoSalvo.isNotEmpty()) {
+            val primeira = textoSalvo.split(";;;")[0]
+            val partes = primeira.split("|")
+            if (partes.size == 2) {
+                mission = partes[0]
+                points = "${partes[1]} pts" // Added "pts" for clarity
+            }
+        }
 
         for (appWidgetId in appWidgetIds) {
             val views = RemoteViews(context.packageName, R.layout.widget_mission)

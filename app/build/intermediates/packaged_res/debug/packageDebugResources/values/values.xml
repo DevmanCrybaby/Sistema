@@ -3,8 +3,8 @@
     <color name="purple_500">#6200EE</color>
     <color name="purple_700">#3700B3</color>
     <color name="white">#FFFFFF</color>
-    <string name="app_name">MissaoDoDia</string>
-    <style name="Theme.MissaoDoDia" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <string name="app_name">Sistema</string>
+    <style name="Theme.Sistema" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>

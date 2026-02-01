@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlin.text.get
 
 // O Adapter recebe a lista de dados (que deve ser a mesma da Activity)
-class AdapterDeRealizacoes(private val listaDeRealizacoes: List<String>,
+class AdapterDeRealizacoes(private val listaDeRealizacoes: MutableList<String>,
                            private val onItemClick: (realizacao: String) -> Unit) :
     RecyclerView.Adapter<AdapterDeRealizacoes.MensagemViewHolder>() {
 
@@ -67,5 +67,10 @@ class AdapterDeRealizacoes(private val listaDeRealizacoes: List<String>,
      */
     override fun getItemCount(): Int {
         return listaDeRealizacoes.size
+    }
+
+    fun removeItem(posicao: Int) {
+        listaDeRealizacoes.removeAt(posicao)
+        notifyItemRemoved(posicao)
     }
 }

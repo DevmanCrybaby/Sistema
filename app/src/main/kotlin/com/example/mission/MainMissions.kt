@@ -218,7 +218,7 @@ class MainMissions : AppCompatActivity() {
     }
 
     private fun abrirDialogoDeRealizacao(position: Int?) {
-        val viewDialogo = LayoutInflater.from(this).inflate(R.layout.dialog_add_message, null)
+        val viewDialogo = LayoutInflater.from(this).inflate(R.layout.dialog_add_w_points, null)
         val builder = AlertDialog.Builder(this)
         builder.setView(viewDialogo)
         val dialog = builder.create()
