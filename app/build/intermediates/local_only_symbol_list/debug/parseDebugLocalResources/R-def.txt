@@ -1,0 +1,33 @@
+R_DEF: Internal format may change without notice
+local
+color purple_500
+color purple_700
+color white
+drawable bg_screen
+drawable bg_widget_cyber
+drawable ic_delete_sweep
+drawable ic_edit
+drawable widget_bg
+id btnSalvar
+id button_main_line
+id etNovaMensagem
+id etPontos
+id fabAdicionar
+id fabAdicionarMissao
+id recyclerViewMainActivity
+id recyclerViewRealizacoes
+id scoreView
+id tvMensagem
+id widget_container
+id widget_text
+id widget_title
+layout activity_main
+layout dialog_add_item
+layout dialog_add_w_points
+layout list_item_message
+layout main_missions
+layout objectives
+layout widget_mission
+string app_name
+style Theme.Sistema
+xml mission_widget_info
